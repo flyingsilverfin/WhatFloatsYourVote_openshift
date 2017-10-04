@@ -1,0 +1,157 @@
+{
+    "parties": {
+        "Liberal-National Coalition" : {
+            "background-color" : [0,85,165, 1]
+        },
+        "Green" : {
+            "background-color" : [0, 190, 0, 1]
+        },
+        "Labor": {
+            "background-color" : [229,54,65, 1]
+        }
+    },
+    "topics": {
+        "environment" : {
+            "displayName": "environment",
+            "image": "images/env.png",
+            "questions": {
+                "left" : "I think that we are doing enough or too much to protect our environment",
+                "right": "I think that we need to do more to protect our environment"
+            },
+            "statusquo": [
+                "Australia is currently are committed to reducing our carbon emissions by 28% by 2030",
+                "The Emissions Reduction Fund is in place to financially reward businesses and corporations that lower their carbon emissions",
+                "90% of the Great Barrier Reef has suffered from bleaching",
+                "It is currently legal to test products on animals",
+                "Australia is currently the 5th biggest carbon emitter per capita in the world"
+            ],
+            "data": {
+                "current": 5.0,
+                "options": {
+                    "Liberal-National Coalition" : {
+                        "issues":
+                            {
+                                "Climate Change" : {
+                                    "value": 4.8,
+                                    "facts":[
+                                        "Reduce emissions by 28% by 2030",
+                                        "Emissions Reduction Fund to incentivise clean business",
+                                        "No carbon tax"
+                                    ]
+                                },
+                                "Great Barrier Reef": {
+                                    "value": 3.5,
+                                    "facts": [
+                                        "Ban on dredging, $2B on reef protection",
+                                        "Supports construction of the Adani Carmichael mine"
+                                    ]
+                                },
+                                "Renewable Energy": {
+                                    "value": 4.5,
+                                    "facts": [
+                                        "23% reliance on renewable energy by 2020",
+                                        "$1B to target innovation projects into renewable energy transition"
+                                    ]
+                                },
+                                "Forests": {
+                                    "value": 3.4,
+                                    "facts": [
+                                        "20 million trees to be planted by 2020"
+                                    ]
+                                },
+                                "Animal Welfare": {
+                                    "value": 4.0,
+                                    "facts": [
+                                        "$190 million to protect endangered species"
+                                    ]
+                                }
+                        }
+                    },
+                    "Green" : {
+                        "issues": {
+                            "Climate Change" : {
+                                "value": 9.0,
+                                "facts": [
+                                    "90% clean energy by 2030",
+                                    "Supports a carbon tax",
+                                    "Opposes Emissions Reduction Fund - pays companies not to pollute"
+                                 ]
+                            },
+                            "Great Barrier Reef": {
+                                "value": 9.5,
+                                "facts": [ 
+                                    "$2.18B for reef protection",
+                                    "Ban future coal projects",
+                                    "Increase water quality pollution control to $2B",
+                                    "New national environmental watchdog",
+                                    "Further shipping restrictions"
+                                ]
+                            },
+                            "Renewable Energy": {
+                                "value": 9.6,
+                                "facts": [ 
+                                    "90% clean energy by 2030",
+                                    "Ban on future coal projects",
+                                    "Transition away from coal and gas with $1B clean energy transition fund"
+                                ]
+                            },
+                            "Forests": {
+                                "value": 8.5,
+                                "facts": [
+                                    "Stop logging of all high conservation forests"
+                                ]
+                            },
+                            "Animal Welfare": {
+                                "value": 9.6,
+                                "facts": [
+                                    "Ban animal testing, live exports, greyhound racing, selective breeding",
+                                    "Reestablish a biodiversity fund",
+                                    "$130M threatened species plan"
+                                ]
+                            }
+                        }
+                    },
+                    "Labor" : {
+                        "issues": {
+                            "Climate Change" :  {
+                                "value": 6.0,
+                                "facts": [ 
+                                    "Net zero pollution by 2050 through an Emissions Trading Scheme",
+                                    "Opposes Emissions Reduction Fund - increases emissions and wastes money",
+                                    "No carbon tax"
+                                ]
+                            },
+                            "Great Barrier Reef":  {
+                                "value": 4.5,
+                                "facts": [
+                                    "$500M invested in science and research, environmental investment and reef management",
+                                    "Supports construction of the Adani Carmichael mine"
+                                ]
+                            },
+                            "Renewable Energy":  {
+                                "value": 6.0,
+                                "facts": [
+                                    "50% renewables by 2030",
+                                    "Support transition to clean energy industry with a fund of $300M"
+                                ]
+                            },
+                            "Forests":  {
+                                "value": 5.1,
+                                "facts": [
+                                    "Expand world heritage listed areas"
+                                ]
+                            },
+                            "Animal Welfare": {
+                                "value": 5.2,
+                                "facts": [
+                                    "Ban animal testing",
+                                    "Introduce an independent office of animal welfare"
+                                ]
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+    }
+}

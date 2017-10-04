@@ -1,0 +1,148 @@
+{
+    /* no recursive schema definitions please! */
+
+    "types": { /* all types */
+        "party_type" : {
+            "type": "object",   /* specify object with following props */
+            "props": {
+                "background-color" : {
+                    "type": "rgba_color_type"
+                }
+            }
+        },
+        "rgba_color_type" : {
+            "type" : "array",
+            "props": {  /* per-index types, similar to props for objects. Note json only allows strings here... converted to number for actual indexing*/
+                "0": {
+                    "type": "num_0_255_default-255"
+                },
+                "1": {
+                    "type": "num_0_255"
+                },
+                "2": {
+                    "type": "num_0_255"
+                } ,
+                "3": {
+                    "type": "num_0_1_default-1"
+                } 
+            }
+        },
+
+        "num_0_255" : {
+            "type": "number", 
+            "min": 0,
+            "max": 255
+        },
+        "num_0_255_default-255" : {
+            "type": "number", 
+            "min": 0,
+            "max": 255,
+            "default": 255
+        },
+        "num_0_1_default-1" : {
+            "type" : "number",
+            "min": 0,
+            "max": 1,
+            "default": 1 
+        },
+
+        "topic_type": {
+            "type": "object",
+            "props": {
+                "displayName": {
+                    "type": "string" /* special type */
+                },
+                "image": {
+                    "type": "string" /* special type */
+                },
+                "questions": {
+                    "type": "questions_type"
+                },
+                "statusquo": {
+                    "type": "array", /* special type */
+                    "min-size": 0,
+                    "max-size": -1,
+                    "subtype": "string" /* special type */
+                },
+                "data": {
+                    "type": "data_type"
+                }
+            }
+        },
+
+
+        "questions_type": {
+            "type": "object",
+            "props": {
+                "left" : {
+                    "type": "string"
+                },
+                "right" : {
+                    "type": "string"
+                }
+            }
+        },
+        "data_type": {
+            "type": "object",
+            "props": {
+                "current": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 10
+                },
+                "options": {
+                    "type": "object",   /* no props key here - specify generic keys values of type 'subtype' below */
+                    "subtype": "options_type",
+                    "min-size": 0,
+                    "max-size": -1
+                }
+            }
+        },
+
+        "options_type" : {
+            "type": "object",
+            "props" : {
+                "issues": {
+                    "type": "object",
+                    "subtype": "issue_type",
+                    "min-size": 0,
+                    "max-size": -1
+                }
+            }
+        },
+
+        "issue_type": {
+            "type": "object",
+            "props": {
+                "current": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 10
+                },
+                "facts": {
+                    "type": "array",
+                    "subtype": "string",
+                    "min-size": 0,
+                    "max-size": -1
+                }
+            }
+        }
+    },
+/* unmodifiable properties */
+    "toplevel": {   
+        "parties": {
+            "type" : "object",
+            "subtype" : "party_type",
+            "min-size": 0,
+            "max-size": -1  /* unbounded */
+        },
+        "topics": {
+            "type": "object",
+            "subtype": "topic_type",
+            "min-size": 0,
+            "max-size": -1
+        }
+    }
+}
+
+
