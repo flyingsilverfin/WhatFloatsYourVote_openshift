@@ -15,6 +15,10 @@ router.get('/live', (req, res) => {
   });
 });
 
+router.get('/test', (req, res) => {
+  res.send({'msg': 'running in some form'});
+  res.status(400);
+})
 
 
 module.exports = router;
