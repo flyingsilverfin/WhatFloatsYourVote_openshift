@@ -47,6 +47,10 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
+
+//  var mongoURL = 'mongodb://localhost:5000/data'; // for local testing
+
+
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
       mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
@@ -87,6 +91,34 @@ var initDb = function(callback) {
     dbDetails.type = 'MongoDB';
 
     console.log('Connected to MongoDB at: %s', mongoURL);
+
+    let collection = db.collection('documents');
+    collection.find({}).toArray(function(err, docs) {
+      console.log(docs);
+      if (docs.length < 2) {
+        console.log("inserting basic docs");
+        collection.insertMany([
+          {
+            name: 'live',
+            data: {
+                "parties": {
+                },
+                "topics": {
+                }
+            }
+          },
+          {
+            name: 'staged',
+            data: {
+                "parties": {
+                },
+                "topics": {
+                }
+            }
+          }
+        ])
+      }
+    });
   });
 };
 
