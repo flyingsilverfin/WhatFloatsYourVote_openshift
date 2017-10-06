@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "WhatFloatsYourVote, a react app for politics",
   "main": "index.js",
-  "scripts": {
-    "start": "nodemon --use_strict index.js",
-    "bundle": "webpack"
-  },
   "dependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
@@ -43,7 +39,7 @@
     "npm": "*"
   },
   "scripts": {
-    "start": "npm run bundle; nodemon --use_strict index.js",
+    "start": "npm run bundle & nodemon --use_strict index.js & wait",
     "bundle": "webpack"
   },
   "repository": {
